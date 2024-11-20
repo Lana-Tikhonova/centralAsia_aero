@@ -102,17 +102,3 @@
 .container.range-plugin .calendar > .days-grid > .day.end:after {
     display: none;
 }
-
-@media screen and (max-width: 576px) {
-    .calendars {
-        padding: 0;
-    }
-
-    .container {
-        transform: none;
-    }
-
-    .container.show {
-        left: 0 !important;
-    }
-}

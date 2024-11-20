@@ -81,7 +81,7 @@ $(document).ready(function () {
 
     datapiskers.forEach((datapisker) => {
         let datapickerGrid;
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 992) {
             datapickerGrid = 1;
         } else {
             datapickerGrid = 2;

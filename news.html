@@ -39,9 +39,9 @@
         <link rel="stylesheet" href="vendors/select2/select2.min.css" />
         <link rel="stylesheet" href="css/common.css?1" />
     </head>
-    <body class="category_page">
-        <!-- на этой страны у body есть класс category_page -->
-        <!-- на стр нвоости тоже есть классу body, но другой-->
+    <body class="news_page">
+        <!-- на этой страны у body есть класс news_page -->
+        <!-- на стр категории тоже есть классу body, но другой-->
         <header class="header">
             <div class="container">
                 <div class="top">
@@ -227,154 +227,261 @@
                 </div>
             </div>
         </div>
-
         <main>
             <section class="section">
                 <div class="container">
-                    <div class="category_block">
+                    <div class="news_title">
+                        <h2 class="title">
+                            Китайский широкофюзеляжный самолет C929 получил
+                            первого заказчика
+                        </h2>
+                        <h4 class="subtitle">
+                            Им стал национальный перевозчик Air China
+                        </h4>
+                        <div class="info">
+                            <span>13 ноября 2024</span>
+                            <span>Максим Пядушкин</span>
+                        </div>
+                    </div>
+                    <div class="news_block">
                         <div class="left">
-                            <div class="category_title_wrapper">
-                                <h2>Деловая авиация</h2>
-                                <div class="filters">
-                                    <div class="form-select_wrapper">
-                                        <select
-                                            class="form-select"
-                                            name="countries"
-                                        >
-                                            <option value="">Все страны</option>
-                                            <option value="1">Казахстан</option>
-                                            <option value="2">
-                                                Кыргызстан
-                                            </option>
-                                            <option value="3">
-                                                Таджикистан
-                                            </option>
-
-                                            <option value="4">
-                                                Туркменистан
-                                            </option>
-                                            <option value="5">
-                                                Узбекистан
-                                            </option>
-                                            <option value="6">
-                                                Азербайджан
-                                            </option>
-                                            <option value="7">Армения</option>
-                                            <option value="8">Грузия</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-select_wrapper">
-                                        <select
-                                            class="form-select"
-                                            name="category"
-                                        >
-                                            <option value="">Рубрика</option>
-                                            <option value="1">Интервью</option>
-                                            <option value="2">Новость</option>
-                                        </select>
-                                    </div>
-                                    <div class="date_input">
-                                        <div class="date_input_block">
-                                            <input
-                                                type="text"
-                                                class="date_input_input"
-                                                placeholder="дд.мм.гггг - дд.мм.гггг"
-                                            />
-                                        </div>
-                                        <span class="date_input_clear">
-                                            <svg class="w24">
-                                                <use
-                                                    xlink:href="imgs/sprite.symbol.svg#clear"
-                                                ></use>
-                                            </svg>
-                                        </span>
-                                    </div>
+                            <!-- большая картинка -->
+                            <div class="images">
+                                <div class="img">
+                                    <img src="imgs/img_1.jpeg" alt="" />
                                 </div>
-                                <div class="info_text">
-                                    Найдено материалов: 12 334
+                                <div class="text">
+                                    После выхода из проекта C929 России сроки
+                                    создания авиалайнера остаются неясными ::
+                                    Air China
                                 </div>
                             </div>
-                            <a href="#" class="ad_block">
-                                <div class="text">Рек<br />ла<br />ма</div>
-                                <div class="ad_block_label">
-                                    Реклама
-                                    <div class="ad_block_label_btn"></div>
+                            <div class="remark_block">
+                                <div class="text"><span>Теги</span></div>
+                                <div class="remark_list">
+                                    <a href="#" class="item">Авиакомпании</a>
+                                    <a href="#" class="item">Аэропорты</a>
+                                    <a href="#" class="item">IT</a>
+                                    <a href="#" class="item">Главная новость</a>
+                                    <a href="#" class="item">Новость</a>
+                                    <a href="#" class="item">Казахстан</a>
                                 </div>
-                            </a>
-
-                            <div class="news_list">
-                                <div class="col">
-                                    <a href="#" class="news_item">
-                                        <div class="label">Казахстан</div>
-                                        <div class="img">
-                                            <img src="imgs/img_1.jpeg" alt="" />
-                                        </div>
-                                        <div class="info">
-                                            <h6 class="title">
-                                                Широкая панельная дискуссия
-                                                "Сценарии эффективного
-                                                применения БПЛА в региональных
-                                                проектах" состоится на
-                                                HeliRussia 2024
-                                            </h6>
-                                            <div class="date">27 Октября</div>
-                                        </div>
+                            </div>
+                            <p>
+                                ATO.ru — Одна из крупнейших авиакомпаний Китая
+                                — Air China стала первым заказчиком нового
+                                китайского широкофюзеляжного
+                                дальнемагистрального пассажирского самолета
+                                C929. Рамочное соглашение об этом национальный
+                                перевозчик подписал с производителем
+                                авиалайнера корпорацией COMAC на авиасалоне в
+                                Чжухае 12 ноября.
+                            </p>
+                            <h2>Заголовок H2</h2>
+                            <p>
+                                Стороны не объявили ни количество самолетов,
+                                которые может заказать Air China, ни сроки их
+                                поставки. COMAC только сообщила, что Air China
+                                будет сотрудничать в развитии системы
+                                послепродажной поддержки будущего авиалайнера и
+                                способствовать его продвижению на рынке.
+                            </p>
+                            <!-- цитата -->
+                            <blockquote>
+                                Стороны не объявили ни количество самолетов,
+                                которые может заказать Air China, ни сроки их
+                                поставки. COMAC только сообщила, что Air China
+                                будет сотрудничать в развитии системы
+                                послепродажной поддержки будущего авиалайнера и
+                                способствовать его продвижению на рынке.
+                                <div class="author">Александрийский Иван</div>
+                            </blockquote>
+                            <p>
+                                Ранее планировалось, что C929 войдет в
+                                эксплуатацию в 2028 году. Однако
+                                после <u>выхода</u> в 2023 году России из этого
+                                проекта сроки создания авиалайнера остаются
+                                неясными. В COMAC подтвердили, что сейчас
+                                ведется предварительное проектирование новой
+                                машины, которая сможет перевозить 280 пасс. на
+                                12 тыс. км. Ожидается, что первая средняя секция
+                                фюзеляжа нового самолета будет готова в 2027
+                                году.
+                            </p>
+                            <!-- большая картинка -->
+                            <div class="images">
+                                <div class="img">
+                                    <img src="imgs/img_1.jpeg" alt="" />
+                                </div>
+                                <div class="text">
+                                    После выхода из проекта C929 России сроки
+                                    создания авиалайнера остаются неясными ::
+                                    Air China
+                                </div>
+                            </div>
+                            <h3>Заголовок H3</h3>
+                            <p>
+                                Air China уже эксплуатирует другие самолеты
+                                COMAC. Сейчас у нее в парке 31 региональный
+                                самолет C909 (бывший ARJ21) и два
+                                среднемагистральных C919. Перевозчик заказал 
+                                <u> 100 авиалайнеров </u>
+                                 последней модели в варианте с увеличенной
+                                дальностью и с самым <u>просторным салоном</u
+                                > среди всех китайских эксплуатантов этого типа.
+                            </p>
+                            <!-- примечание -->
+                            <div class="footnote">
+                                Стороны не объявили ни количество самолетов,
+                                которые может заказать Air China, ни сроки их
+                                поставки. COMAC только сообщила, что Air China
+                                будет сотрудничать в развитии системы
+                                послепродажной поддержки будущего авиалайнера и
+                                способствовать его продвижению на рынке.
+                            </div>
+                            <h4>Заголовок H4</h4>
+                            <p>
+                                По состоянию на октябрь 2024 года самолеты C919
+                                Air China совершили в общей сложности 174 рейса,
+                                безопасно налетали 389 ч и перевезли 23,8 тыс.
+                                пасс., сообщили в COMAC. Региональные C909
+                                авиакомпании налетали 46000 рейсов, или 81000
+                                ч, и перевезли 3,04 млн пасс. — ATO.ru
+                            </p>
+                            <h4>Список</h4>
+                            <!-- список -->
+                            <ol>
+                                <li>
+                                    По состоянию на октябрь 2024 года самолеты
+                                    C919 Air China совершили в общей сложности
+                                    174 рейса, безопасно налетали 389 ч и
+                                    перевезли 23,8 тыс. пасс., сообщили в COMAC.
+                                </li>
+                                <li>
+                                    Региональные C909 авиакомпании налетали
+                                    46000 рейсов, или 81000 ч, и перевезли 3,04
+                                    млн пасс. — ATO.ru
+                                </li>
+                                <li>
+                                    Air China уже эксплуатирует другие самолеты
+                                    COMAC
+                                </li>
+                            </ol>
+                            <!-- список -->
+                            <ul>
+                                <li>
+                                    По состоянию на октябрь 2024 года самолеты
+                                    C919 Air China совершили в общей сложности
+                                    174 рейса, безопасно налетали 389 ч и
+                                    перевезли 23,8 тыс. пасс., сообщили в COMAC.
+                                </li>
+                                <li>
+                                    Региональные C909 авиакомпании налетали
+                                    46000 рейсов, или 81000 ч, и перевезли 3,04
+                                    млн пасс. — ATO.ru
+                                </li>
+                                <li>
+                                    Air China уже эксплуатирует другие самолеты
+                                    COMAC
+                                </li>
+                            </ul>
+                            <div class="subscribe_block">
+                                <h3 class="title">
+                                    Подписывайтесь на нас в соцсетях
+                                </h3>
+                                <div class="subscribe_list">
+                                    <a href="#" class="item">
+                                        Telegram
+                                        <svg class="fill_none w24">
+                                            <use
+                                                xlink:href="imgs/sprite.symbol.svg#telegram"
+                                            ></use>
+                                        </svg>
                                     </a>
-                                </div>
-                                <div class="col">
-                                    <a href="#" class="news_item">
-                                        <div class="label">Казахстан</div>
-                                        <div class="img">
-                                            <img src="imgs/img_1.jpeg" alt="" />
-                                        </div>
-                                        <div class="info">
-                                            <h6 class="title">
-                                                Двигатель для Superjet 100
-                                                завершает повторные стендовые
-                                                испытания
-                                            </h6>
-                                            <div class="date">27 Октября</div>
-                                        </div>
+                                    <a href="#" class="item">
+                                        Facebook
+                                        <svg class="fill_none w24">
+                                            <use
+                                                xlink:href="imgs/sprite.symbol.svg#facebook"
+                                            ></use>
+                                        </svg>
                                     </a>
-                                </div>
-                                <div class="col">
-                                    <a href="#" class="news_item">
-                                        <div class="label">Казахстан</div>
-                                        <div class="img">
-                                            <img src="imgs/img_1.jpeg" alt="" />
-                                        </div>
-                                        <div class="info">
-                                            <h6 class="title">
-                                                Отсутствие заключений по
-                                                множеству авиапроисшествий
-                                                вызывает озабоченность у IATA
-                                            </h6>
-                                            <div class="date">27 Октября</div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="#" class="news_item">
-                                        <div class="label">Казахстан</div>
-                                        <div class="img">
-                                            <img src="imgs/img_1.jpeg" alt="" />
-                                        </div>
-                                        <div class="info">
-                                            <h6 class="title">
-                                                Из аэропорта Санкт-Петербурга
-                                                запланированы полеты по 105
-                                                направлениям в зимнюю навигацию
-                                                Из аэропорта Санкт-Петербурга
-                                                запланированы полеты по 105
-                                                направлениям в зимнюю навигацию
-                                            </h6>
-                                            <div class="date">27 Октября</div>
-                                        </div>
+                                    <a href="#" class="item">
+                                        Linkedin
+                                        <svg class="fill_none w24">
+                                            <use
+                                                xlink:href="imgs/sprite.symbol.svg#linkedin"
+                                            ></use>
+                                        </svg>
                                     </a>
                                 </div>
                             </div>
-                            <div class="btn_wrapper">
-                                <div class="btn">Показать еще</div>
+                            <div class="remark_block">
+                                <div class="text">
+                                    <span>Похожие авторы</span>
+                                </div>
+                                <div class="remark_list">
+                                    <a href="#" class="item">Иван иванов</a>
+                                    <a href="#" class="item">Кирил петрв</a>
+                                    <a href="#" class="item"
+                                        >Михаил Александрийский</a
+                                    >
+                                </div>
+                            </div>
+                            <div class="remark_block">
+                                <div class="text">
+                                    <span>Поделиться</span>
+                                </div>
+                                <div class="share_list">
+                                    <a href="#" class="item">
+                                        <svg class="fill_none w22">
+                                            <use
+                                                xlink:href="imgs/sprite.symbol.svg#facebook_color"
+                                            ></use>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="item">
+                                        <svg class="fill_none w22">
+                                            <use
+                                                xlink:href="imgs/sprite.symbol.svg#vk_color"
+                                            ></use>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="item">
+                                        <svg class="fill_none w22">
+                                            <use
+                                                xlink:href="imgs/sprite.symbol.svg#odnoklassniki_color"
+                                            ></use>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="item">
+                                        <svg class="fill_none w22">
+                                            <use
+                                                xlink:href="imgs/sprite.symbol.svg#telegram_color"
+                                            ></use>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="item">
+                                        <svg class="fill_none w22">
+                                            <use
+                                                xlink:href="imgs/sprite.symbol.svg#twiter_color"
+                                            ></use>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="item">
+                                        <svg class="fill_none w22">
+                                            <use
+                                                xlink:href="imgs/sprite.symbol.svg#viber_color"
+                                            ></use>
+                                        </svg>
+                                    </a>
+                                    <svg class="fill_none w22">
+                                        <use
+                                            xlink:href="imgs/sprite.symbol.svg#whatsapp_color"
+                                        ></use>
+                                    </svg>
+                                </a>
+                                </div>
                             </div>
                         </div>
                         <div class="right">
@@ -454,15 +561,6 @@
                     </div>
                 </div>
             </section>
-            <section class="section">
-                <div class="container">
-                    <div class="mailing_block">
-                        <img src="imgs/logo_white.svg" alt="" />
-                        <div class="text h1">Подписка на&nbsp;рассылку</div>
-                        <div class="btn btn_black">Подписаться</div>
-                    </div>
-                </div>
-            </section>
             <section class="section materials_section">
                 <div class="container">
                     <ul class="materials_list">
@@ -517,6 +615,15 @@
                             </a>
                         </li>
                     </ul>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="mailing_block">
+                        <img src="imgs/logo_white.svg" alt="" />
+                        <div class="text h1">Подписка на&nbsp;рассылку</div>
+                        <div class="btn btn_black">Подписаться</div>
+                    </div>
                 </div>
             </section>
             <section class="section">
