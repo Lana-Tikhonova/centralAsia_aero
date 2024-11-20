@@ -1,0 +1,118 @@
+:host {
+    --color-bg-default: #ffffff;
+    --color-fg-primary: #64cc77;
+    --color-fg-default: #333333;
+    --color-fg-accent: #64cc77;
+    --color-bg-inrange: #d1f2e9;
+    --color-fg-selected: #333333;
+    --day-width: 32px;
+    --day-height: 24px;
+    --border-radius: 5px;
+    --color-fg-muted: #333333;
+}
+
+.calendar > .daynames-row,
+.calendar > .days-grid {
+    row-gap: 5px;
+}
+
+/* increase start and end */
+.container.range-plugin .calendar > .days-grid > .day.start,
+.container.range-plugin .calendar > .days-grid > .day.end {
+    z-index: 1;
+}
+
+.container {
+    font-family: 'Inter', sans-serif;
+    left: 50% !important;
+    top: 10px !important;
+    transform: scale(1) translateX(-50%);
+}
+
+.container.show {
+    box-shadow: 0px 4px 80px rgba(22, 22, 22, 0.12);
+    border-radius: 15px;
+    height: auto;
+    left: 50% !important;
+}
+
+.calendar > .header {
+    padding-bottom: 16px;
+}
+
+.calendar > .daynames-row > .day,
+.calendar > .days-grid > .day,
+.calendar > .days-grid > .dayname {
+    font-size: 13px;
+    line-height: 120%;
+}
+
+.calendar {
+    padding: 12px;
+}
+
+.calendars {
+    padding: 0 16px 14px;
+}
+
+.calendar > .header button {
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+
+.calendar > .header button > img,
+.calendar > .header button > svg {
+    color: transparent;
+    fill: none;
+    transform: none;
+}
+
+.calendar > .header button:hover > img,
+.calendar > .header button:hover > svg {
+    color: transparent;
+    fill: none;
+    stroke: #64cc77;
+}
+
+.calendar > .daynames-row > .dayname {
+    font-size: 14px;
+    line-height: 120%;
+    text-transform: capitalize;
+    padding-bottom: 10px;
+}
+
+.calendar > .days-grid > .day {
+    border-radius: 5px;
+}
+
+.container.range-plugin .calendar > .days-grid > .day.start {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.container.range-plugin .calendar > .days-grid > .day.end {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.container.range-plugin .calendar > .days-grid > .day.start:after {
+    display: none;
+}
+
+.container.range-plugin .calendar > .days-grid > .day.end:after {
+    display: none;
+}
+
+@media screen and (max-width: 576px) {
+    .calendars {
+        padding: 0;
+    }
+
+    .container {
+        transform: none;
+    }
+
+    .container.show {
+        left: 0 !important;
+    }
+}
