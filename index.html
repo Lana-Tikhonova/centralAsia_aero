@@ -73,7 +73,7 @@
                     <div class="head_info">
                         <div class="login_block">
                             <a href="#" class="item">
-                                <svg class="fill_none w24">
+                                <svg class="fill_none w24 stroke_black">
                                     <use
                                         xlink:href="imgs/sprite.symbol.svg#user"
                                     ></use>
@@ -81,7 +81,7 @@
                                 Иванов И.
                             </a>
                             <a href="#" class="item">
-                                <svg class="fill_none w24">
+                                <svg class="fill_none w24 stroke_black">
                                     <use
                                         xlink:href="imgs/sprite.symbol.svg#entry"
                                     ></use>
@@ -89,7 +89,7 @@
                             </a>
                         </div>
                         <a href="#" class="item search_btn">
-                            <svg class="fill_none w24">
+                            <svg class="fill_none w24 stroke_black">
                                 <use
                                     xlink:href="imgs/sprite.symbol.svg#search"
                                 ></use>
@@ -140,7 +140,7 @@
                     <img src="imgs/logo.svg" alt="" />
                 </a>
                 <a href="#" class="search_btn">
-                    <svg class="fill_none w24">
+                    <svg class="fill_none w24 stroke_black">
                         <use xlink:href="imgs/sprite.symbol.svg#search"></use>
                     </svg>
                 </a>
@@ -184,7 +184,7 @@
                 <div class="bottom_block">
                     <div class="login_block">
                         <a href="#" class="item">
-                            <svg class="fill_none w24">
+                            <svg class="fill_none w24 stroke_black">
                                 <use
                                     xlink:href="imgs/sprite.symbol.svg#user"
                                 ></use>
@@ -192,7 +192,7 @@
                             Иванов И.
                         </a>
                         <a href="#" class="item">
-                            <svg class="fill_none w24">
+                            <svg class="fill_none w24 stroke_black">
                                 <use
                                     xlink:href="imgs/sprite.symbol.svg#entry"
                                 ></use>
@@ -623,14 +623,29 @@
                 <div class="cloud_section bg_img">
                     <div class="container">
                         <div class="cloud_block">
-                            <a href="#" class="item active">Казахстан</a>
-                            <a href="#" class="item">Кыргызстан</a>
-                            <a href="#" class="item">Таджикистан</a>
-                            <a href="#" class="item">Туркменистан</a>
-                            <a href="#" class="item">Узбекистан</a>
-                            <a href="#" class="item">Азербайджан</a>
-                            <a href="#" class="item">Армения</a>
-                            <a href="#" class="item">Грузия</a>
+                            <!-- Думаю можно сделать чтобы с сервера приходила цифра от 1 до 8 (8 стран насчитала) и по этим цифрам я будут прописывать размеры
+1 это  малое количество статей - кнопка самая маленькая
+8 это самое максимальное -кнопка самая большая -->
+                            <a href="#" class="item active" data-size="8"
+                                >Казахстан</a
+                            >
+                            <a href="#" class="item" data-size="7"
+                                >Кыргызстан</a
+                            >
+                            <a href="#" class="item" data-size="6"
+                                >Таджикистан</a
+                            >
+                            <a href="#" class="item" data-size="5"
+                                >Туркменистан</a
+                            >
+                            <a href="#" class="item" data-size="4"
+                                >Узбекистан</a
+                            >
+                            <a href="#" class="item" data-size="3"
+                                >Азербайджан</a
+                            >
+                            <a href="#" class="item" data-size="2">Армения</a>
+                            <a href="#" class="item" data-size="1">Грузия</a>
                         </div>
                     </div>
                 </div>
@@ -722,7 +737,7 @@
                     <div class="swiper events_slider">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <div class="item">
+                                <a href="#" class="item">
                                     <div class="date">
                                         <span>24</span>
                                         Декабря
@@ -760,10 +775,10 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div class="swiper-slide">
-                                <div class="item">
+                                <a href="#" class="item">
                                     <div class="date">
                                         <span>1</span>
                                         Января
@@ -802,10 +817,10 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div class="swiper-slide">
-                                <div class="item">
+                                <a href="#" class="item">
                                     <div class="date">
                                         <span>14</span>
                                         Феарвля
@@ -844,10 +859,10 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div class="swiper-slide">
-                                <div class="item">
+                                <a href="#" class="item">
                                     <div class="date">
                                         <span>2</span>
                                         Март
@@ -886,10 +901,10 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div class="swiper-slide">
-                                <div class="item">
+                                <a href="#" class="item">
                                     <div class="date">
                                         <span>24</span>
                                         Апрель
@@ -927,10 +942,10 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div class="swiper-slide">
-                                <div class="item">
+                                <a href="#" class="item">
                                     <div class="date">
                                         <span>28</span>
                                         Май
@@ -969,10 +984,10 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div class="swiper-slide">
-                                <div class="item">
+                                <a href="#" class="item">
                                     <div class="date">
                                         <span>1</span>
                                         Июня
@@ -1011,10 +1026,10 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div class="swiper-slide">
-                                <div class="item">
+                                <a href="#" class="item">
                                     <div class="date">
                                         <span>24</span>
                                         Июля
@@ -1053,7 +1068,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                         <div class="swiper-pagination"></div>

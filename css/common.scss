@@ -160,7 +160,7 @@ button {
 
 @media screen and (min-width: 1200px) {
     .container {
-        max-width: 1304px;
+        max-width: 1280px;
     }
 }
 .text-center {
@@ -181,6 +181,11 @@ button {
     border-radius: 8px;
     background: linear-gradient(104deg, #63cc76 34.05%, #ebee2b 105.95%);
     width: fit-content;
+    background-position: 70%;
+    background-size: 150%;
+    &:hover {
+        background-position: 100%;
+    }
 }
 .btn_black {
     background: $color_black;
@@ -190,6 +195,12 @@ button {
     background: transparent;
     padding: 4px 6px 4px 12px;
     border: 1px solid $color_grey_200;
+    &:hover {
+        border-color: $color_blue;
+        svg {
+            transform: translateX(5px);
+        }
+    }
 }
 .btn_wrapper {
     display: flex;
@@ -206,71 +217,6 @@ button {
         padding-bottom: 15px;
     }
 }
-// .content {
-//     max-width: 720px;
-//     margin-bottom: 90px;
-
-//     .share_block {
-//         margin-top: 48px;
-//     }
-
-//     h2,
-//     h3 {
-//         margin-top: 48px;
-//     }
-
-//     p {
-//         color: $color_black_two;
-//         font-size: 18px;
-//         line-height: 157.556%;
-
-//         &:last-child {
-//             margin-bottom: 0;
-//         }
-//     }
-
-//     hr {
-//         border-top: 1px solid #eaecf0;
-//         margin: 48px 0 64px;
-//     }
-
-//     a {
-//         font-weight: 600;
-//         color: $color_orange;
-//     }
-
-//     ul {
-//         list-style: disc;
-//     }
-
-//     ol,
-//     ul {
-//         color: $color_black_two;
-//         font-size: 18px;
-//         line-height: 157.556%;
-//         padding-left: 27px;
-//     }
-
-//     .content_block {
-//         margin-top: 48px;
-//         margin-bottom: 48px;
-
-//         img {
-//             width: 100%;
-//             object-fit: contain;
-//         }
-//     }
-
-//     .events_data {
-//         margin-top: 48px;
-//         margin-bottom: 48px;
-//     }
-
-//     .events_data_col {
-//         width: 50%;
-//         min-height: 220px;
-//     }
-// }
 
 // .plyr__control--overlaid {
 //     border-radius: 16px;
@@ -386,10 +332,14 @@ svg {
         top: initial;
         width: 40px;
         height: 40px;
+        transition: $transition;
         &:after {
             content: '';
             width: 24px;
             height: 24px;
+        }
+        &:hover {
+            border-color: $color_blue;
         }
     }
     .swiper-button-next {
@@ -520,6 +470,11 @@ svg {
         &.active {
             color: $color_black;
         }
+        &:hover {
+            &:not(.active) {
+                color: $color_green;
+            }
+        }
     }
 }
 .head_info {
@@ -536,6 +491,11 @@ svg {
 }
 .search_btn {
     display: flex;
+    &:hover {
+        .stroke_black {
+            stroke: $color_green;
+        }
+    }
 }
 .login_block {
     display: flex;
@@ -548,7 +508,8 @@ svg {
         gap: 10px;
         font-size: 12px;
         &:hover {
-            svg {
+            .stroke_black {
+                stroke: $color_green;
             }
         }
     }
@@ -558,6 +519,21 @@ svg {
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
+    .item {
+        // width: 18px;
+        // height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+            fill: $color_black;
+        }
+        &:hover {
+            svg {
+                fill: $color_green;
+            }
+        }
+    }
 }
 .social_list_text {
     display: flex;
@@ -567,6 +543,9 @@ svg {
     .item {
         text-transform: uppercase;
         color: #fff;
+        &:hover {
+            color: $color_green;
+        }
     }
 }
 .menu {
@@ -578,6 +557,9 @@ svg {
         font-weight: 700;
         text-transform: uppercase;
         padding: 10px;
+        &:hover {
+            color: $color_green;
+        }
     }
 }
 .menu_btn {
@@ -766,6 +748,9 @@ svg {
         border-bottom: 1px solid $color_grey_200;
         display: flex;
         flex-direction: column;
+        &:hover {
+            border-bottom-color: $color_grey_500;
+        }
         .title {
             margin-bottom: 14px;
             overflow: hidden;
@@ -828,21 +813,104 @@ svg {
 }
 .cloud_section {
     position: relative;
-    padding: 30px;
-
-    .item {
-        border-radius: 20px;
-        background: #fff;
-        font-weight: 600;
-        padding: 10px 20px;
-    }
+    padding: 30px 0;
 }
 .cloud_block {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    max-width: 857px;
+    margin-left: auto;
+    margin-right: auto;
     gap: 20px;
+    .item {
+        background: #fff;
+        font-weight: 600;
+        line-height: 120%;
+        border-radius: 100px;
+        &:hover {
+            &:not(.active) {
+                color: $color_green;
+            }
+        }
+        &.active {
+            color: #fff;
+            background: linear-gradient(104deg, #63cc76 34.05%, #ebee2b 105.95%),
+                linear-gradient(102deg, #38a74d 21.39%, #baee2b 97.87%);
+        }
+        &[data-size='8'] {
+            font-size: 32px;
+            padding: 24px 60px;
+        }
+        &[data-size='7'] {
+            font-size: 30px;
+            padding: 22px 55px;
+        }
+        &[data-size='6'] {
+            font-size: 28px;
+            padding: 20px 50px;
+        }
+        &[data-size='5'] {
+            font-size: 26px;
+            padding: 18px 45px;
+        }
+        &[data-size='4'] {
+            font-size: 24px;
+            padding: 16px 40px;
+        }
+        &[data-size='3'] {
+            font-size: 22px;
+            padding: 14px 35px;
+        }
+        &[data-size='2'] {
+            font-size: 20px;
+            padding: 12px 30px;
+        }
+        &[data-size='1'] {
+            font-size: 18px;
+            padding: 10px 25px;
+        }
+    }
+}
+@media screen and (max-width: 720px) {
+    .cloud_block {
+        gap: 10px;
+        .item {
+            &[data-size='8'] {
+                font-size: 16px;
+                padding: 12px 20px;
+            }
+            &[data-size='7'] {
+                font-size: 15px;
+                padding: 11px 19px;
+            }
+            &[data-size='6'] {
+                font-size: 14px;
+                padding: 10px 17.5px;
+            }
+            &[data-size='5'] {
+                font-size: 13px;
+                padding: 9px 16px;
+            }
+            &[data-size='4'] {
+                font-size: 12px;
+                padding: 8px 14.5px;
+            }
+            &[data-size='3'] {
+                font-size: 11px;
+                padding: 7px 13px;
+            }
+            &[data-size='2'] {
+                font-size: 10px;
+                padding: 6px 11.5px;
+            }
+            &[data-size='1'] {
+                font-size: 9px;
+                padding: 5px 10px;
+            }
+        }
+    }
 }
 .bg_img {
     background: linear-gradient(
@@ -879,6 +947,11 @@ svg {
     position: relative;
     display: flex;
     flex-direction: column;
+    &:hover {
+        .title {
+            color: $color_green;
+        }
+    }
     .img {
         position: relative;
         height: 0;
@@ -916,6 +989,7 @@ svg {
         -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;
         max-height: 120px;
+        transition: $transition;
     }
     .date {
         margin-top: auto;
@@ -941,6 +1015,11 @@ svg {
     .item {
         height: 100%;
         display: flex;
+        &:hover {
+            .title {
+                color: $color_blue;
+            }
+        }
         .date {
             border-radius: 16px 0px;
             background: var(
@@ -978,6 +1057,7 @@ svg {
             -webkit-line-clamp: 4;
             -webkit-box-orient: vertical;
             height: 86.36px;
+            transition: $transition;
         }
     }
 }
@@ -1077,6 +1157,9 @@ svg {
     }
     a {
         color: $color_grey_200;
+        &:hover {
+            color: $color_green;
+        }
     }
     .dropdown_btn {
         margin-bottom: 20px;
@@ -1432,7 +1515,14 @@ svg {
             .footer_list > li:nth-child(2) {
                 margin-bottom: 0;
             }
+            .footer_list > li:nth-child(3) .dropdown_btn {
+                padding-top: 12px;
+            }
         }
+    }
+    .footer_list .footer_item_big {
+        font-weight: 600;
+        color: #fff !important;
     }
     .dropdown_btn {
         position: relative;
@@ -1442,6 +1532,10 @@ svg {
         align-items: center;
         gap: 10px;
         font-size: 18px;
+        &:hover {
+            color: $color_green;
+            cursor: pointer;
+        }
         &:after {
             content: '';
             display: block;
@@ -2172,6 +2266,9 @@ svg {
         border-radius: 8px;
         background: $color_grey_100;
         width: fit-content;
+        &:hover {
+            color: $color_blue;
+        }
     }
 }
 .subscribe_block {
