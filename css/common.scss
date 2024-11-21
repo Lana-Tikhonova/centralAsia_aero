@@ -609,7 +609,7 @@ svg {
         }
     }
 }
-.ad_block {
+.plate_block {
     border-radius: 10px;
     background: $color_black;
     word-wrap: break-word;
@@ -624,7 +624,7 @@ svg {
         margin: auto;
     }
 }
-.ad_block_label {
+.plate_block_label {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -635,13 +635,13 @@ svg {
     align-items: center;
     gap: 10px;
 }
-.ad_block_label_btn {
+.plate_block_label_btn {
     width: 14px;
     height: 14px;
     background-size: contain;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='14' height='14' rx='7' fill='%23EBEBED'/%3e%3ccircle cx='7' cy='4' r='1' fill='%2399999B'/%3e%3ccircle cx='7' cy='7' r='1' fill='%2399999B'/%3e%3ccircle cx='7' cy='10' r='1' fill='%2399999B'/%3e%3c/svg%3e ");
 }
-.ad_block_head {
+.plate_block_head {
     width: 300px;
     height: 600px;
     .text {
@@ -654,12 +654,12 @@ svg {
         letter-spacing: -16px;
     }
 }
-.head_block {
+.heplate_block {
     display: flex;
     align-items: flex-start;
     gap: 20px;
 }
-.head_block_item {
+.heplate_block_item {
     &:first-child {
         width: calc(54% - 160px);
     }
@@ -707,14 +707,14 @@ svg {
     padding-right: 10px;
     &:first-child {
         .materials_item {
-            .ad_block {
+            .plate_block {
                 margin-top: 43px;
             }
         }
     }
     &:last-child {
         .materials_item {
-            .ad_block {
+            .plate_block {
                 margin-top: 30px;
             }
         }
@@ -722,7 +722,7 @@ svg {
 }
 .materials_item {
     height: 100%;
-    .ad_block {
+    .plate_block {
         height: 160px;
 
         .text {
@@ -1193,7 +1193,7 @@ svg {
             display: none;
         }
     }
-    .head_block_item {
+    .heplate_block_item {
         &:first-child {
             width: calc(57% - 160px);
         }
@@ -1241,10 +1241,10 @@ svg {
 }
 
 @media screen and (max-width: 992px) {
-    .head_block {
+    .heplate_block {
         flex-wrap: wrap;
     }
-    .head_block_item {
+    .heplate_block_item {
         &:first-child {
             width: 100%;
         }
@@ -1259,10 +1259,10 @@ svg {
             width: 100%;
         }
     }
-    .materials_col:first-child .materials_item .ad_block {
+    .materials_col:first-child .materials_item .plate_block {
         margin-top: 20px;
     }
-    .materials_col:last-child .materials_item .ad_block {
+    .materials_col:last-child .materials_item .plate_block {
         margin-top: 20px;
     }
     .title_wrapper {
@@ -1281,7 +1281,7 @@ svg {
     .footer {
         margin-top: 45px;
     }
-    .head_block_item {
+    .heplate_block_item {
         .news_item {
             border-bottom: 1px solid $color_grey_200;
         }
@@ -1303,13 +1303,13 @@ svg {
             display: none;
         }
     }
-    .head_block_item:nth-child(2) {
+    .heplate_block_item:nth-child(2) {
         width: 100%;
     }
-    .head_block_item {
+    .heplate_block_item {
         width: 100%;
     }
-    .ad_block_head {
+    .plate_block_head {
         height: 250px;
         width: 100%;
 
@@ -1327,7 +1327,7 @@ svg {
     .materials_list .item {
         padding: 10px;
     }
-    .head_block {
+    .heplate_block {
         gap: 10px;
     }
     .mailing_block img {
@@ -1456,7 +1456,7 @@ svg {
         }
     }
 
-    .head_block_item {
+    .heplate_block_item {
         .news_item {
             .title {
                 font-size: 16px;
@@ -1584,7 +1584,7 @@ svg {
     .footer_row {
         gap: 30px;
     }
-    .materials_item .ad_block {
+    .materials_item .plate_block {
         height: 250px;
         width: 100%;
         .text {
@@ -1611,13 +1611,13 @@ svg {
         margin-right: 20px;
         border-top: 1px solid $color_grey_200;
         padding-top: 14px;
-        .ad_block {
+        .plate_block {
             display: none;
         }
     }
     .right {
         width: 300px;
-        .ad_block {
+        .plate_block {
             margin-bottom: 20px;
         }
     }
@@ -1990,7 +1990,7 @@ svg {
         .left {
             width: 100%;
             margin-right: 0;
-            .ad_block {
+            .plate_block {
                 display: flex;
                 height: 250px;
                 margin-bottom: 30px;
