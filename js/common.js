@@ -86,11 +86,12 @@ $(document).ready(function () {
         } else {
             datapickerGrid = 2;
         }
+
         const picker = new easepick.create({
             element: datapisker,
             css: [
-                '../vendors/easepick/easepick.css',
-                '../vendors/easepick/customize_easepick.css',
+                'vendors/easepick/easepick.css',
+                'vendors/easepick/customize_easepick.css',
             ],
             setup(picker) {
                 // Обработчик выбора даты
