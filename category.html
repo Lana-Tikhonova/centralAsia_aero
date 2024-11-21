@@ -11,6 +11,23 @@
         <meta name="keywords" content="" />
         <title>Centar Asia + Aero</title>
 
+        <!-- favicons -->
+        <link
+            rel="icon"
+            type="image/png"
+            href="favicon/favicon-96x96.png"
+            sizes="96x96"
+        />
+        <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg" />
+        <link rel="shortcut icon" href="favicons/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="favicons/apple-touch-icon.png"
+        />
+        <meta name="apple-mobile-web-app-title" content="CentralAsia+Aero" />
+        <link rel="manifest" href="favicons/site.webmanifest" />
+
         <!-- шрифты -->
         <link
             rel="preload"
@@ -35,13 +52,14 @@
         />
 
         <link rel="stylesheet" href="vendors/swiper/swiper-bundle.min.css" />
-        <link rel="stylesheet" href="vendors/plyr/plyr.css" />
         <link rel="stylesheet" href="vendors/select2/select2.min.css" />
-        <link rel="stylesheet" href="css/common.css?1" />
+        <link
+            rel="stylesheet"
+            href="vendors/fancybox/jquery.fancybox.min.css"
+        />
+        <link rel="stylesheet" href="css/common.css?2" />
     </head>
-    <body class="category_page">
-        <!-- на этой страны у body есть класс category_page -->
-        <!-- на стр нвоости тоже есть классу body, но другой-->
+    <body>
         <header class="header">
             <div class="container">
                 <div class="top">
@@ -293,7 +311,7 @@
                                     Найдено материалов: 12 334
                                 </div>
                             </div>
-                            <a href="#" class="plate_block">
+                            <a href="#" class="plate_block plate_block_body">
                                 <div class="text">Рек<br />ла<br />ма</div>
                                 <div class="plate_block_label">
                                     Реклама
@@ -464,6 +482,9 @@
             </section>
             <section class="section materials_section">
                 <div class="container">
+                    <div class="title_wrapper">
+                        <h4>Рекомендованные материалы</h4>
+                    </div>
                     <ul class="materials_list">
                         <li>
                             <a href="#" class="item">
@@ -743,11 +764,10 @@
             </div>
         </footer>
         <script src="vendors/jquery/jquery-3.5.1.min.js"></script>
-        <script src="vendors/imask/imask.js"></script>
         <script src="vendors/select2/select2.full.min.js"></script>
         <script src="vendors/easepick/easepick.umd.min.js"></script>
         <script src="vendors/swiper/swiper-bundle.min.js"></script>
-        <script src="vendors/plyr/plyr.polyfilled.js"></script>
-        <script src="js/common.js?1"></script>
+        <script src="vendors/fancybox/jquery.fancybox.min.js"></script>
+        <script src="js/common.js?2"></script>
     </body>
 </html>

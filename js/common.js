@@ -1,8 +1,11 @@
 $(document).ready(function () {
+    // select
     $('.form-select').select2({
         minimumResultsForSearch: Infinity,
         width: 'auto',
     });
+
+    // Популярные материалы
     const swiperPopular = new Swiper('.popular_slider', {
         slidesPerView: 1,
         spaceBetween: 20,
@@ -29,6 +32,7 @@ $(document).ready(function () {
         },
     });
 
+    // открытие меню в футере на мобилке
     $('.dropdown_btn').on('click', function (e) {
         e.preventDefault();
         $('.dropdown_btn')
@@ -42,6 +46,7 @@ $(document).ready(function () {
             .slideToggle('ease-out');
     });
 
+    // Мероприятия
     const swiperEvents = new Swiper('.events_slider', {
         slidesPerView: 1,
         grid: {
@@ -142,29 +147,6 @@ $(document).ready(function () {
             }
         });
     });
-
-    // видео
-    const players = Array.from(document.querySelectorAll('.player_video')).map(
-        (p) =>
-            new Plyr(p, {
-                autoplay: false,
-            })
-    );
-
-    // // анимация
-    // let offset
-    // if ($(window).width() > 576) {
-    //     offset = 100;
-    // } else {
-    //     offset = 0;
-    // }
-    // AOS.init({
-    //     easing: 'ease-in-out',
-    //     delay: 100,
-    //     once: true,
-    //     duration: 700,
-    //     offset: offset,
-    // });
     // открытие моб. меню
     $('.menu_btn').on('click', function () {
         $('.menu_btn').toggleClass('active');
@@ -172,76 +154,33 @@ $(document).ready(function () {
         $('body').toggleClass('locked');
     });
 
-    // // маска для телефона
-    // const phoneInputs = document.querySelectorAll('.form_input[name="tel"]');
-    // phoneInputs.forEach((input) => {
-    //     IMask(input, {
-    //         mask: '+{7}(000)000-00-00',
-    //     });
-    // });
+    // галерея в статье
+    const swiperGallery = new Swiper('.gallery_slider', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        watchSlidesProgress: true,
+        mousewheelControl: true,
+        watchOverflow: true,
+        watchSlidesVisibility: true,
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
 
-    // // открытие модаки
-    // // нужно только поменять значени в data-modal и data-open-modal
-    // const body = document.querySelector('body');
-    // let getScrollWidth = () => window.innerWidth - document.documentElement.offsetWidth;
-    // let browserScrollWidth = getScrollWidth();
-
-    // document.addEventListener('click', (e) => {
-    //     const target = e.target;
-    //     if (target.closest('[data-open-modal]')) {
-    //         e.preventDefault();
-    //         const targetId = target.closest('[data-open-modal]').dataset.openModal;
-    //         const selectedModal = document.querySelector(`[data-modal="${targetId}"]`);
-    //         selectedModal.classList.add('show');
-    //         body.classList.add('locked');
-    //         if (getScrollWidth() == 0) {
-    //             body.style.paddingRight = `${browserScrollWidth}px`;
-    //         }
-    //     }
-    //     if (target.closest('[data-modal-close]')) {
-    //         e.preventDefault();
-    //         let modalOpen = document.querySelector('.modal.show');
-    //         document.querySelector('.modal.show').classList.remove('show');
-    //         body.classList.remove('locked');
-    //         body.style.paddingRight = ``;
-    //     }
-    //     if (target.closest('.modal') && !target.closest('.modal-content')) {
-    //         e.preventDefault();
-    //         let modalOpen = document.querySelector('.modal.show');
-    //         document.querySelector('.modal.show').classList.remove('show');
-    //         body.classList.remove('locked');
-    //         body.style.paddingRight = ``;
-    //     }
-    // });
-
-    // // копированиe URL в буфер обмена
-    // $('.copy_block').click(function () {
-    //     var url = window.location.href;
-    //     var $button = $(this);
-    //     console.log($button);
-    //     navigator.clipboard.writeText(url).then(function () {
-    //         $button.addClass('copied');
-    //         setTimeout(() => {
-    //             $button.removeClass('copied');
-    //         }, 3000);
-    //     }, function (err) {
-    //         console.error('Ошибка копирования URL в буфер обмена: ', err);
-    //     });
-    // });
-
-    // $('.faq_item').first().find('.faq_item_content').slideToggle()
-    // $('.faq_item').first().addClass('active')
-
-    // $(".faq_item").click(function () {
-    //     $('.faq_item').not(this).removeClass('active').children('.faq_item_content').slideUp("ease-out")
-    //     $(this).toggleClass("active").children(".faq_item_content").slideToggle("ease-out")
-    // })
-
-    // $('.requirements_item').first().find('.requirements_item_content').slideToggle()
-    // $('.requirements_item').first().addClass('active')
-
-    // $(".requirements_item").click(function () {
-    //     $('.requirements_item').not(this).removeClass('active').children('.requirements_item_content').slideUp("ease-out")
-    //     $(this).toggleClass("active").children(".requirements_item_content").slideToggle("ease-out")
-    // })
+    // открытие картинки во весь экран
+    if ($('[data-fancybox="gallery"]').length) {
+        $('[data-fancybox="gallery"]').fancybox({
+            idleTime: false,
+            animationEffect: 'fade',
+            smallBtn: false,
+            contentClick: 'close',
+            mobile: {
+                clickSlide: 'close',
+            },
+        });
+    }
 });
