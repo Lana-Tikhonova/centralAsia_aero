@@ -392,34 +392,6 @@ svg.w18 {
   color: #ccc;
 }
 
-.plate_block_top .plate_block {
-  width: 100%;
-  height: 250px;
-  border-radius: 0;
-}
-.plate_block_top .plate_block .text {
-  color: #181818;
-  font-size: 278px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 90%;
-  letter-spacing: -5.56px;
-  margin: 0;
-  margin-top: auto;
-}
-
-@media screen and (max-width: 992px) {
-  .plate_block_top .plate_block .text {
-    font-size: 170px;
-    letter-spacing: -4.16px;
-  }
-}
-@media screen and (max-width: 576px) {
-  .plate_block_top .plate_block .text {
-    font-size: 108px;
-    letter-spacing: -2.16px;
-  }
-}
 .header {
   position: relative;
 }
@@ -595,17 +567,11 @@ svg.w18 {
 .plate_block {
   border-radius: 10px;
   background: #333333;
-  word-wrap: break-word;
   flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   position: relative;
-}
-.plate_block .text {
-  color: #181818;
-  font-family: "Tenor Sans";
-  margin: auto;
 }
 
 .plate_block_label {
@@ -618,6 +584,7 @@ svg.w18 {
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 
 .plate_block_label_btn {
@@ -627,33 +594,83 @@ svg.w18 {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='14' height='14' rx='7' fill='%23EBEBED'/%3e%3ccircle cx='7' cy='4' r='1' fill='%2399999B'/%3e%3ccircle cx='7' cy='7' r='1' fill='%2399999B'/%3e%3ccircle cx='7' cy='10' r='1' fill='%2399999B'/%3e%3c/svg%3e ");
 }
 
+.plate_block_label_dropdown {
+  border-radius: 10px;
+  border: 1px solid #e3e1ef;
+  background: #fff;
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  padding: 8px;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 122px;
+  display: none;
+}
+.plate_block_label_dropdown.active {
+  display: flex;
+}
+.plate_block_label_dropdown li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  white-space: nowrap;
+  text-align: right;
+}
+.plate_block_label_dropdown li:after {
+  border-radius: 100%;
+  content: "";
+  display: block;
+  position: relative;
+  top: 0;
+  right: 0;
+  flex: 0 0 auto;
+  width: 4px;
+  height: 4px;
+  background: #99999b;
+}
+
+.plate_block_img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.plate_block_img picture {
+  width: 100%;
+}
+.plate_block_img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .plate_block_head {
   width: 300px;
   height: 600px;
 }
-.plate_block_head .text {
-  margin: 0;
-  margin-top: auto;
-  font-size: 200px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 60%;
-  letter-spacing: -16px;
+
+.plate_block_top .plate_block {
+  width: 100%;
+  height: 250px;
+  border-radius: 0;
 }
 
-.heplate_block {
+.head_block {
   display: flex;
   align-items: flex-start;
   gap: 20px;
 }
 
-.heplate_block_item:first-child {
+.head_block_item:first-child {
   width: calc(54% - 160px);
 }
-.heplate_block_item:nth-child(2) {
+.head_block_item:nth-child(2) {
   width: calc(45% - 160px);
 }
-.heplate_block_item .materials_list .item .title {
+.head_block_item .materials_list .item .title {
   font-size: 16px;
   height: 57.6px;
   margin-bottom: 22px;
@@ -706,14 +723,6 @@ svg.w18 {
 .materials_item .plate_block {
   height: 160px;
 }
-.materials_item .plate_block .text {
-  padding: 20px;
-  font-size: 128px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 90%; /* 115.2px */
-  letter-spacing: -10.24px;
-}
 
 .materials_list li:first-child .item {
   padding-top: 0;
@@ -751,6 +760,9 @@ svg.w18 {
   display: flex;
   padding-bottom: 20px;
 }
+.materials_list_img .item:hover .title {
+  color: #64cc77;
+}
 .materials_list_img .item .title {
   margin-bottom: 8px;
   overflow: hidden;
@@ -758,6 +770,7 @@ svg.w18 {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   height: 44px;
+  transition: all 0.3s ease;
 }
 .materials_list_img .item .img {
   flex: 0 0 auto;
@@ -1148,10 +1161,10 @@ svg.w18 {
   .header .menu {
     display: none;
   }
-  .heplate_block_item:first-child {
+  .head_block_item:first-child {
     width: calc(57% - 160px);
   }
-  .heplate_block_item:nth-child(2) {
+  .head_block_item:nth-child(2) {
     width: calc(41% - 160px);
   }
   h1 {
@@ -1174,13 +1187,13 @@ svg.w18 {
   }
 }
 @media screen and (max-width: 992px) {
-  .heplate_block {
+  .head_block {
     flex-wrap: wrap;
   }
-  .heplate_block_item:first-child {
+  .head_block_item:first-child {
     width: 100%;
   }
-  .heplate_block_item:nth-child(2) {
+  .head_block_item:nth-child(2) {
     width: calc(100% - 320px);
   }
   .materials_wrapper {
@@ -1212,7 +1225,7 @@ svg.w18 {
   .footer {
     margin-top: 45px;
   }
-  .heplate_block_item .news_item {
+  .head_block_item .news_item {
     border-bottom: 1px solid #ccc;
   }
   h1 {
@@ -1245,22 +1258,15 @@ svg.w18 {
   .header .top {
     display: none;
   }
-  .heplate_block_item:nth-child(2) {
+  .head_block_item:nth-child(2) {
     width: 100%;
   }
-  .heplate_block_item {
+  .head_block_item {
     width: 100%;
   }
   .plate_block_head {
     height: 250px;
     width: 100%;
-  }
-  .plate_block_head .text {
-    font-size: 110px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 60%;
-    letter-spacing: -8.8px;
   }
   .news_item .info {
     padding: 10px;
@@ -1268,7 +1274,7 @@ svg.w18 {
   .materials_list .item {
     padding: 10px;
   }
-  .heplate_block {
+  .head_block {
     gap: 10px;
   }
   .events_slider {
@@ -1368,10 +1374,10 @@ svg.w18 {
   .header .logo {
     width: 99px;
   }
-  .heplate_block_item .news_item .title {
+  .head_block_item .news_item .title {
     font-size: 16px;
   }
-  .heplate_block_item .news_item .text {
+  .head_block_item .news_item .text {
     display: none;
   }
   .news_list .col {
@@ -1485,16 +1491,6 @@ svg.w18 {
   .materials_item .plate_block {
     height: 250px;
     width: 100%;
-  }
-  .materials_item .plate_block .text {
-    font-size: 110px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 60%;
-    letter-spacing: -8.8px;
-    padding: 0;
-    margin: 0;
-    margin-top: auto;
   }
 }
 .materials_section {
@@ -1873,15 +1869,6 @@ svg.w18 {
     height: 250px;
     margin-bottom: 30px;
     width: 100%;
-  }
-  .plate_block_body .text {
-    font-size: 110px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 60%;
-    letter-spacing: -8.8px;
-    margin: 0;
-    margin-top: auto;
   }
   .category_block .left {
     width: 100%;
