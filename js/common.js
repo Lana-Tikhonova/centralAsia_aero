@@ -158,7 +158,7 @@ $(document).ready(function () {
             if (picker.options.element == pickerBtnParentInput) {
                 picker.clear();
                 this.parentNode.classList.remove('completed');
-                $(this).remove();
+                $(this).classList.remove('show');
             }
         });
     });
