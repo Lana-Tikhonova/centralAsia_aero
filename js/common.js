@@ -203,4 +203,10 @@ $(document).ready(function () {
     $('.plate_block_label').on('click', function () {
         $(this).find('.plate_block_label_dropdown').toggleClass('active');
     });
+
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('.plate_block_label').length) {
+            $('.plate_block_label_dropdown').removeClass('active');
+        }
+    });
 });
