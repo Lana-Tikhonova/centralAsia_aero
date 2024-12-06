@@ -57,7 +57,8 @@
             rel="stylesheet"
             href="vendors/fancybox/jquery.fancybox.min.css"
         />
-        <link rel="stylesheet" href="css/common.css?3" />
+        <link rel="stylesheet" href="vendors/plyr/plyr.css" />
+        <link rel="stylesheet" href="css/common.css?4" />
     </head>
     <body>
         <div class="plate_block_top">
@@ -444,6 +445,24 @@
                                 дальностью и с самым <u>просторным салоном</u
                                 > среди всех китайских эксплуатантов этого типа.
                             </p>
+
+                            <!-- видео (не забыть подключить css js plyr) -->
+                            <div class="video_block">
+                                <video
+                                    class="player_video"
+                                    playsinline
+                                    controls
+                                    data-poster="imgs/img_1.jpeg"
+                                >
+                                    <source src="" type="video/mp4" />
+                                    <source src="" type="video/webm" />
+                                </video>
+                                <div class="text">
+                                    После выхода из проекта C929 России сроки
+                                    создания авиалайнера остаются неясными ::
+                                    Air China
+                                </div>
+                            </div>
                             <!-- примечание -->
                             <div class="footnote">
                                 Стороны не объявили ни количество самолетов,
@@ -1008,6 +1027,7 @@
         <script src="vendors/easepick/easepick.umd.min.js"></script>
         <script src="vendors/swiper/swiper-bundle.min.js"></script>
         <script src="vendors/fancybox/jquery.fancybox.min.js"></script>
-        <script src="js/common.js?2"></script>
+        <script src="vendors/plyr/plyr.polyfilled.js"></script>
+        <script src="js/common.js?3"></script>
     </body>
 </html>

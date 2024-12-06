@@ -209,4 +209,80 @@ $(document).ready(function () {
             $('.plate_block_label_dropdown').removeClass('active');
         }
     });
+
+    // видео
+    const players = Array.from(document.querySelectorAll('.player_video')).map(
+        (p) =>
+            new Plyr(p, {
+                autoplay: false,
+            })
+    );
+
+    // показывать 2 строки тегов на стр поиска
+    const maxRows = 2; // Максимальное количество строк
+
+    const $searchTagsList = $('.search_tags_list');
+    const $labels = $searchTagsList.find('.label');
+    const $toggleButton = $searchTagsList.find('.search_tags_btn');
+
+    function updateLabelVisibility() {
+        const containerWidth = $searchTagsList.width();
+        const buttonWidth = $toggleButton.outerWidth(true); // Ширина кнопки
+        const availableWidth = containerWidth - buttonWidth; // Доступная ширина
+
+        let currentRowWidth = 0;
+        let rowCount = 1;
+        let isOverflowing = false;
+
+        $labels.each(function () {
+            const elementWidth = $(this).outerWidth(true);
+
+            if (currentRowWidth + elementWidth > availableWidth) {
+                rowCount++;
+                currentRowWidth = 0;
+            }
+
+            if (rowCount > maxRows) {
+                $(this).addClass('hidden');
+                isOverflowing = true;
+            } else {
+                $(this).removeClass('hidden');
+                currentRowWidth += elementWidth;
+            }
+        });
+
+        if (isOverflowing) {
+            $toggleButton.show();
+        } else {
+            $toggleButton.hide();
+        }
+
+        // Убедиться, что кнопка всегда последняя
+        $toggleButton.appendTo($searchTagsList);
+    }
+
+    $toggleButton.on('click', function () {
+        if ($searchTagsList.hasClass('expanded')) {
+            $(this).removeClass('active');
+            $searchTagsList.removeClass('expanded');
+            updateLabelVisibility();
+        } else {
+            $(this).addClass('active');
+            $labels.removeClass('hidden');
+            $searchTagsList.addClass('expanded');
+        }
+    });
+
+    $(window).on('resize', function () {
+        if (!$searchTagsList.hasClass('expanded')) {
+            updateLabelVisibility();
+        }
+    });
+
+    updateLabelVisibility();
+
+    // добавлять класс в тегу при клике
+    $labels.on('click', function () {
+        $(this).toggleClass('active');
+    });
 });

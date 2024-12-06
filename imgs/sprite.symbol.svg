@@ -13,10 +13,10 @@
         <path d="M17.7139 17.2134L22.7139 22.2134" stroke-width="2"/>
     </symbol>
     <symbol viewBox="0 0 24 24" id="arrow_right" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9.0791 6L15.0791 12L9.0791 18" stroke="#287AD4" stroke-width="2"/>
+        <path d="M9.0791 6L15.0791 12L9.0791 18" stroke-width="2"/>
     </symbol>
     <symbol viewBox="0 0 24 24" id="arrow_left" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15.0791 6L9.0791 12L15.0791 18" stroke="#287AD4" stroke-width="2"/>
+        <path d="M15.0791 6L9.0791 12L15.0791 18" stroke-width="2"/>
     </symbol>
     <!-- 18 -->
     <symbol viewBox="0 0 18 18" id="location" xmlns="http://www.w3.org/2000/svg">
