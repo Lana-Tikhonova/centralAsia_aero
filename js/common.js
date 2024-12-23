@@ -230,6 +230,30 @@ $(document).ready(function () {
         });
     }
 
+    $('#searchForm').on('submit', function (e) {
+        e.preventDefault();
+
+        const searchValue = $('input[name="search"]').val().trim();
+
+        if (!searchValue) {
+            alert('Введите текст для поиска.');
+            return;
+        }
+
+        $.ajax({
+            url: '/',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ search: searchValue }),
+            success: function (response) {
+                console.log('Результат поиска:', response);
+            },
+            error: function (xhr, status, error) {
+                console.error('Ошибка при отправке запроса:', error);
+            },
+        });
+    });
+
     // открытие моб. меню
     $('.menu_btn').on('click', function () {
         $('.menu_btn').toggleClass('active');
