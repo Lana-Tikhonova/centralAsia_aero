@@ -14,12 +14,6 @@ $(document).ready(function () {
         offset: offset,
     });
 
-    // select
-    $('.form-select').select2({
-        minimumResultsForSearch: Infinity,
-        width: 'auto',
-    });
-
     // Популярные материалы
     const swiperPopular = new Swiper('.popular_slider', {
         slidesPerView: 1,
@@ -96,6 +90,16 @@ $(document).ready(function () {
         },
     });
 
+    // select
+    let select = $('.form-select').select2({
+        minimumResultsForSearch: Infinity,
+        width: 'auto',
+    });
+
+    select.on('select2:select', function (e) {
+        sendAllData();
+    });
+
     //календарь
     const datapiskers = document.querySelectorAll('.date_input_input');
 
@@ -123,6 +127,8 @@ $(document).ready(function () {
                     if (clearButton) {
                         clearButton.classList.add('show');
                     }
+
+                    sendAllData();
                 });
 
                 // Обработчик очистки
@@ -134,6 +140,8 @@ $(document).ready(function () {
                     if (clearButton) {
                         clearButton.classList.remove('show');
                     }
+
+                    sendAllData();
                 });
             },
             lang: 'ru-US',
@@ -158,10 +166,70 @@ $(document).ready(function () {
             if (picker.options.element == pickerBtnParentInput) {
                 picker.clear();
                 this.parentNode.classList.remove('completed');
-                $(this).classList.remove('show');
+                this.classList.remove('show');
+                sendAllData();
             }
         });
     });
+
+    // Обработчик клика на чекбоксах
+    $('.search_tags_list input[type="checkbox"]').on('change', function () {
+        sendAllData(); // Отправка данных при изменении состояния чекбокса
+    });
+
+    // Функция отправки всех данных
+    function sendAllData() {
+        let dataToSend = collectData();
+        sendData(dataToSend);
+    }
+    // Cбор всех данных
+    function collectData() {
+        let dataToSend = {};
+
+        // с селектов
+        $('.form-select').each(function () {
+            let name = $(this).attr('name');
+            let value = $(this).val();
+            dataToSend[name] = value;
+        });
+
+        //  с поля даты
+        $('.date_input_input').each(function () {
+            let name = $(this).attr('name');
+            let value = $(this).val();
+            dataToSend[name] = value;
+        });
+
+        // Собираем данные с чекбоксов
+        let tags = [];
+        $('.search_tags_list .tag input[type="checkbox"]:checked').each(
+            function () {
+                tags.push($(this).val());
+            }
+        );
+        if (tags.length > 0) {
+            dataToSend['tags'] = tags; // Добавляем массив выбранных тегов
+        }
+
+        return dataToSend;
+    }
+
+    // Функция отправки всех данных
+    function sendData(dataToSend) {
+        console.log('Отправка данных на сервер', dataToSend);
+        $.ajax({
+            url: '/',
+            type: 'POST',
+            data: dataToSend,
+            success: function (response) {
+                console.log('Ответ от сервера:', response);
+            },
+            error: function (xhr, status, error) {
+                console.error('Ошибка при отправке данных:', error);
+            },
+        });
+    }
+
     // открытие моб. меню
     $('.menu_btn').on('click', function () {
         $('.menu_btn').toggleClass('active');
@@ -222,7 +290,7 @@ $(document).ready(function () {
     const maxRows = 2; // Максимальное количество строк
 
     const $searchTagsList = $('.search_tags_list');
-    const $labels = $searchTagsList.find('.label');
+    const $labels = $searchTagsList.find('.tag');
     const $toggleButton = $searchTagsList.find('.search_tags_btn');
 
     function updateLabelVisibility() {
@@ -281,8 +349,68 @@ $(document).ready(function () {
 
     updateLabelVisibility();
 
-    // добавлять класс в тегу при клике
-    $labels.on('click', function () {
-        $(this).toggleClass('active');
-    });
+    // Блок "Поделиться"
+    const shareList = document.querySelector('.share_list');
+    if (shareList) {
+        shareList.addEventListener('click', function (event) {
+            // Если клик был на иконке, переходим к кнопке
+            const button = event.target.closest('button');
+            if (!button) return; // Если клик не на кнопке, ничего не делаем
+
+            const social = button.getAttribute('data-social');
+            if (!social) return; // Если нет атрибута data-social, ничего не делаем
+
+            // Получаем данные из мета-тегов
+            const title =
+                document.querySelector('meta[property="og:title"]')?.content ||
+                document.title;
+            const description =
+                document.querySelector('meta[property="og:description"]')
+                    ?.content || '';
+            const imageUrl =
+                document.querySelector('meta[property="og:image"]')?.content ||
+                '';
+            const pageUrl =
+                document.querySelector('meta[property="og:url"]')?.content ||
+                window.location.href;
+
+            // Генерируем ссылки для социальных сетей
+            const socialUrls = {
+                facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                    window.location.href
+                )}`,
+                vkontakte: `https://vk.com/share.php?url=${encodeURIComponent(
+                    window.location.href
+                )}`,
+                telegram: `https://t.me/share/url?url=${encodeURIComponent(
+                    window.location.href
+                )}`,
+                x: `https://x.com/intent/tweet?url=${encodeURIComponent(
+                    window.location.href
+                )}`,
+                odnoklassniki: `https://connect.ok.ru/offer?url=${encodeURIComponent(
+                    window.location.href
+                )}`,
+                viber: `viber://forward?text=${encodeURIComponent(
+                    title + ' - ' + description + ' ' + pageUrl
+                )}`,
+                whatsapp: `https://wa.me/?text=${encodeURIComponent(
+                    title + ' - ' + description + ' ' + pageUrl
+                )}`,
+            };
+
+            // Для Viber, открываем приложение напрямую
+            if (social === 'viber') {
+                window.location.href = socialUrls.viber; // Переход по URL для Viber
+            } else {
+                // Для других соц.сетей открываем ссылку в новом окне
+                const shareUrl = socialUrls[social];
+                if (shareUrl) {
+                    window.open(shareUrl, '_blank', 'width=600,height=400');
+                } else {
+                    console.error(`Сеть ${social} не поддерживается`);
+                }
+            }
+        });
+    }
 });

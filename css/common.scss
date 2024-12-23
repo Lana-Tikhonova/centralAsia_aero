@@ -2632,27 +2632,51 @@ svg {
     flex-wrap: wrap;
     gap: 10px;
     align-items: center;
-    .label {
-        font-size: 12px;
-        padding: 6.5px 16px;
-        border-radius: 28px;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        &.active {
-            background: $color_green;
-            color: #fff;
-            &:after {
-                content: '';
-                display: block;
-                position: relative;
-                margin: -3px -6px -3px 8px;
-                width: 24px;
-                height: 24px;
-                background-repeat: no-repeat;
-                background-position: center;
-                background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M19.2642 6.28904L10.553 15L6.13444 10.5814' stroke='white' stroke-width='2'/%3e%3c/svg%3e ");
+    .tag {
+        position: relative;
+        input[type='checkbox'] {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            margin: 0;
+            &:checked {
+                & ~ span {
+                    background: $color_green;
+                    color: #fff;
+                    &:after {
+                        content: '';
+                        display: block;
+                        position: relative;
+                        margin: -3px -6px -3px 8px;
+                        width: 24px;
+                        height: 24px;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M19.2642 6.28904L10.553 15L6.13444 10.5814' stroke='white' stroke-width='2'/%3e%3c/svg%3e ");
+                    }
+                }
             }
+        }
+        span {
+            color: #5f5f5f;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 140%;
+            text-transform: uppercase;
+            padding: 6.5px 16px;
+            border-radius: 28px;
+            background: #f2f2f2;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
         }
         &.hidden {
             display: none;

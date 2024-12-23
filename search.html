@@ -283,16 +283,27 @@
                                         class="form-select"
                                         name="countries"
                                     >
-                                        <option value="">Все страны</option>
-                                        <option value="1">Казахстан</option>
-                                        <option value="2">Кыргызстан</option>
-                                        <option value="3">Таджикистан</option>
-
-                                        <option value="4">Туркменистан</option>
-                                        <option value="5">Узбекистан</option>
-                                        <option value="6">Азербайджан</option>
-                                        <option value="7">Армения</option>
-                                        <option value="8">Грузия</option>
+                                        <option value="all">Все страны</option>
+                                        <option value="Казахстан">
+                                            Казахстан
+                                        </option>
+                                        <option value="Кыргызстан">
+                                            Кыргызстан
+                                        </option>
+                                        <option value="Таджикистан">
+                                            Таджикистан
+                                        </option>
+                                        <option value="Туркменистан">
+                                            Туркменистан
+                                        </option>
+                                        <option value="Узбекистан">
+                                            Узбекистан
+                                        </option>
+                                        <option value="Азербайджан">
+                                            Азербайджан
+                                        </option>
+                                        <option value="Армения">Армения</option>
+                                        <option value="Грузия">Грузия</option>
                                     </select>
                                 </div>
                                 <div
@@ -300,15 +311,18 @@
                                     data-aos="fade-up"
                                 >
                                     <select class="form-select" name="category">
-                                        <option value="">Рубрика</option>
-                                        <option value="1">Интервью</option>
-                                        <option value="2">Новость</option>
+                                        <option value="Рубрика">Рубрика</option>
+                                        <option value="Интервью">
+                                            Интервью
+                                        </option>
+                                        <option value="Новость">Новость</option>
                                     </select>
                                 </div>
                                 <div class="date_input" data-aos="fade-up">
                                     <div class="date_input_block">
                                         <input
                                             type="text"
+                                            name="date"
                                             class="date_input_input"
                                             placeholder="дд.мм.гггг - дд.мм.гггг"
                                         />
@@ -339,42 +353,191 @@
                             <button class="btn">Поиск</button>
                         </div>
                         <div class="search_tags_list" data-aos="fade-up">
-                            <div class="label">Авиакомпании</div>
-                            <div class="label">Аэропорты</div>
-                            <div class="label">ТОиР</div>
-                            <div class="label">IT</div>
-                            <div class="label">Грузоперевозки</div>
-                            <div class="label">Деловая авиация</div>
-                            <div class="label">Главная новость</div>
-                            <div class="label">Мероприятие</div>
-                            <div class="label">Новость</div>
-                            <div class="label">Аналитика</div>
-                            <div class="label">Интервью</div>
-                            <div class="label">Казахстан</div>
-                            <div class="label">Авиакомпании</div>
-                            <div class="label">Аэропорты</div>
-                            <div class="label">ТОиР</div>
-                            <div class="label">IT</div>
-                            <div class="label">Грузоперевозки</div>
-                            <div class="label">Деловая авиация</div>
-                            <div class="label">Главная новость</div>
-                            <div class="label">Мероприятие</div>
-                            <div class="label">Новость</div>
-                            <div class="label">Аналитика</div>
-                            <div class="label">Интервью</div>
-                            <div class="label">Казахстан</div>
-                            <div class="label">Авиакомпании</div>
-                            <div class="label">Аэропорты</div>
-                            <div class="label">ТОиР</div>
-                            <div class="label">IT</div>
-                            <div class="label">Грузоперевозки</div>
-                            <div class="label">Деловая авиация</div>
-                            <div class="label">Главная новость</div>
-                            <div class="label">Мероприятие</div>
-                            <div class="label">Новость</div>
-                            <div class="label">Аналитика</div>
-                            <div class="label">Интервью</div>
-                            <div class="label">Казахстан</div>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Авиакомпании"
+                                />
+                                <span>Авиакомпании</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Аэропорты"
+                                />
+                                <span>Аэропорты</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="ТОиР"
+                                />
+                                <span>ТОиР</span>
+                            </label>
+                            <label class="tag">
+                                <input type="checkbox" name="tags" value="IT" />
+                                <span>IT</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Грузоперевозки"
+                                />
+                                <span>Грузоперевозки</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Деловая авиация"
+                                />
+                                <span>Деловая авиация</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Главная новость"
+                                />
+                                <span>Главная новость</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Мероприятие"
+                                />
+                                <span>Мероприятие</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Новость"
+                                />
+                                <span>Новость</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Аналитика"
+                                />
+                                <span>Аналитика</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Интервью"
+                                />
+                                <span>Интервью</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Казахстан"
+                                />
+                                <span>Казахстан</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Авиакомпании"
+                                />
+                                <span>Авиакомпании</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Аэропорты"
+                                />
+                                <span>Аэропорты</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="ТОиР"
+                                />
+                                <span>ТОиР</span>
+                            </label>
+                            <label class="tag">
+                                <input type="checkbox" name="tags" value="IT" />
+                                <span>IT</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Грузоперевозки"
+                                />
+                                <span>Грузоперевозки</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Деловая авиация"
+                                />
+                                <span>Деловая авиация</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Главная новость"
+                                />
+                                <span>Главная новость</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Мероприятие"
+                                />
+                                <span>Мероприятие</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Новость"
+                                />
+                                <span>Новость</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Аналитика"
+                                />
+                                <span>Аналитика</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Интервью"
+                                />
+                                <span>Интервью</span>
+                            </label>
+                            <label class="tag">
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value="Казахстан"
+                                />
+                                <span>Казахстан</span>
+                            </label>
+
                             <div class="search_tags_btn">
                                 <span>Показать все</span>
                                 <span>Свернуть все</span>

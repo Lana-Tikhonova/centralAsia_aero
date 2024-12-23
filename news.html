@@ -11,6 +11,13 @@
         <meta name="keywords" content="" />
         <title>Centar Asia + Aero</title>
 
+        <meta property="og:title" content="Заголовок новости" />
+        <meta property="og:description" content="Описание новости" />
+        <meta property="og:image" content="https://example.com/image.jpg" />
+        <meta property="og:url" content="https://example.com/current-page" />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Название вашего сайта" />
+
         <!-- favicons -->
         <link
             rel="icon"
@@ -269,7 +276,7 @@
             </div>
         </div>
         <main>
-            <section class="section">
+            <section class="section news_pages">
                 <div class="container">
                     <div class="news_title">
                         <h2 class="title" data-aos="fade-up">
@@ -585,55 +592,61 @@
                                     <span>Поделиться</span>
                                 </div>
                                 <div class="share_list">
-                                    <a href="#" class="item">
+                                    <button data-social="facebook" class="item">
                                         <svg class="fill_none w22">
                                             <use
                                                 xlink:href="imgs/sprite.symbol.svg#facebook_color"
                                             ></use>
                                         </svg>
-                                    </a>
-                                    <a href="#" class="item">
+                                    </button>
+                                    <button
+                                        data-social="vkontakte"
+                                        class="item"
+                                    >
                                         <svg class="fill_none w22">
                                             <use
                                                 xlink:href="imgs/sprite.symbol.svg#vk_color"
                                             ></use>
                                         </svg>
-                                    </a>
-                                    <a href="#" class="item">
+                                    </button>
+                                    <button
+                                        data-social="odnoklassniki"
+                                        class="item"
+                                    >
                                         <svg class="fill_none w22">
                                             <use
                                                 xlink:href="imgs/sprite.symbol.svg#odnoklassniki_color"
                                             ></use>
                                         </svg>
-                                    </a>
-                                    <a href="#" class="item">
+                                    </button>
+                                    <button data-social="telegram" class="item">
                                         <svg class="fill_none w22">
                                             <use
                                                 xlink:href="imgs/sprite.symbol.svg#telegram_color"
                                             ></use>
                                         </svg>
-                                    </a>
-                                    <a href="#" class="item">
+                                    </button>
+                                    <button data-social="x" class="item">
                                         <svg class="fill_none w22">
                                             <use
                                                 xlink:href="imgs/sprite.symbol.svg#twiter_color"
                                             ></use>
                                         </svg>
-                                    </a>
-                                    <a href="#" class="item">
+                                    </button>
+                                    <button data-social="viber" class="item">
                                         <svg class="fill_none w22">
                                             <use
                                                 xlink:href="imgs/sprite.symbol.svg#viber_color"
                                             ></use>
                                         </svg>
-                                    </a>
-                                    <a href="#" class="item">
+                                    </button>
+                                    <button data-social="whatsapp" class="item">
                                         <svg class="fill_none w22">
                                             <use
                                                 xlink:href="imgs/sprite.symbol.svg#whatsapp_color"
                                             ></use>
                                         </svg>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -1028,6 +1041,6 @@
         <script src="vendors/swiper/swiper-bundle.min.js"></script>
         <script src="vendors/fancybox/jquery.fancybox.min.js"></script>
         <script src="vendors/plyr/plyr.polyfilled.js"></script>
-        <script src="js/common.js?3"></script>
+        <script src="js/common.js?5"></script>
     </body>
 </html>
